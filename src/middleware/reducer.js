@@ -1,29 +1,37 @@
+import { GET_USER_LIST, DEL_USER, ADD_USER, EDIT_USER } from "./action";
+
 const initialState = {
-  users: [],
+  users: [
+    {
+      id: "0",
+      name: "n",
+      emaail: "e",
+    },
+  ],
 };
 
 const reducer = (state = initialState, action) => {
   const allUsers = [...state.users];
   switch (action.type) {
-    case "GET_USER_LISTS":
+    case GET_USER_LIST:
       const allUsersState = {
         ...state,
         users: action.payload,
       };
       return allUsersState;
-    case "DEL_USER":
+    case DEL_USER:
       const newState = {
         ...state,
         users: state.users.filter((item) => item.id !== action.payload),
       };
       return newState;
-    case "ADD_USER":
+    case ADD_USER:
       const addedState = {
         ...state,
         users: [action.payload, ...state.users],
       };
       return addedState;
-    case "EDIT_USER":
+    case EDIT_USER:
       const indexForEdit = allUsers.findIndex((item) => {
         return item.id === action.payload.id;
       });
