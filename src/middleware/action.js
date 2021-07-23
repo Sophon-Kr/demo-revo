@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const delUser = (id) => {
   return (dispatch) => {
-    axios.delete(`http://localhost:5000/users/${id}`).then((res) => {
+    axios.delete(`http://localhost:80/users/${id}`).then((res) => {
       console.log(res);
       dispatch({
         type: "DEL_USER",
@@ -14,7 +14,7 @@ export const delUser = (id) => {
 
 export const addUser = (data) => {
   return (dispatch) => {
-    axios.post("http://localhost:5000/users", data).then((res) => {
+    axios.post("http://localhost:80/users", data).then((res) => {
       console.log(res);
       dispatch({
         type: "ADD_USER",
@@ -26,7 +26,7 @@ export const addUser = (data) => {
 
 export const editUser = (data) => {
   return (dispatch) => {
-    axios.put(`http://localhost:5000/users/${data.id}`, data).then((res) => {
+    axios.put(`http://localhost:80/users/${data.id}`, data).then((res) => {
       console.log(res);
       dispatch({
         type: "EDIT_USER",
@@ -38,7 +38,7 @@ export const editUser = (data) => {
 
 export const getUser = (id) => {
   return (dispatch) => {
-    axios.get(`http://localhost:5000/users/${id}`).then(() => {
+    axios.get(`http://localhost:80/users/${id}`).then(() => {
       dispatch({
         type: "GET_USER",
         payload: id,
@@ -49,7 +49,8 @@ export const getUser = (id) => {
 
 export const getUserList = () => {
   return (dispatch) => {
-    axios.get("http://localhost:5000/users").then((res) => {
+    axios.get("http://localhost:80/users").then((res) => {
+      console.log(res.data);
       dispatch({
         type: "GET_USER_LIST",
         payload: res.data,
