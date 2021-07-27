@@ -1,4 +1,10 @@
-import { GET_USER_LIST, DEL_USER, ADD_USER, EDIT_USER } from "./action";
+import {
+  GET_USER_LIST,
+  DEL_USER,
+  ADD_USER,
+  EDIT_USER,
+  GET_USER,
+} from "./action";
 
 const initialState = {
   users: [

@@ -2,15 +2,41 @@ import React, { Component } from "react";
 import User from "./User";
 import { connect } from "react-redux";
 import * as action from "../middleware/action";
+import {
+  withStyles,
+  createTheme,
+  ThemeProvider,
+} from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#283593",
+    },
+    secondary: {
+      main: "#e0f7fa",
+    },
+  },
+});
+
+const useStyles = (theme) => ({
+  card: {
+    maxWidth: 400,
+    marginTop: 30,
+  },
+  media: {
+    height: 250,
+  },
+  buttonColor: {
+    backgroundColor: "#e57373",
+    // warning: "#ffb74d",
+    // error: "#e57373",
+  },
+});
 export class UserList extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     allUsers: "a",
-  //   };
-  // }
   render() {
+    const { classes } = this.props;
     const allUsers = this.props.userFromList;
     // console.log("allUsers", allUsers);
     let lists = (
@@ -28,8 +54,16 @@ export class UserList extends Component {
     }
     return (
       <div>
-        <h1>UserList</h1>
-        {lists}
+        <ThemeProvider theme={theme}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            {lists}
+          </Grid>
+        </ThemeProvider>
       </div>
     );
   }

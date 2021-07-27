@@ -17,7 +17,7 @@ import { Grid } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import EditIcon from "@material-ui/icons/Edit";
 import * as action from "../middleware/action";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const theme = createTheme({
@@ -33,7 +33,7 @@ const theme = createTheme({
 
 const useStyles = (theme) => ({
   card: {
-    maxWidth: 345,
+    maxWidth: 400,
     marginTop: 30,
   },
   media: {
@@ -48,8 +48,8 @@ const useStyles = (theme) => ({
 class User extends Component {
   render() {
     const { classes } = this.props;
-    const delFn = this.props.deleteUserAtList;
-  
+    // const delFn = this.props.deleteUserAtList;
+
     return (
       <ThemeProvider theme={theme}>
         <React.Fragment>
@@ -84,7 +84,7 @@ class User extends Component {
                       variant="contained"
                       size="medium"
                       color="danger"
-                      fullWidth
+                      // fullWidth
                     >
                       <DeleteIcon />
                       &nbsp; Delete
@@ -95,7 +95,7 @@ class User extends Component {
                       variant="contained"
                       size="medium"
                       color="danger"
-                      fullWidth
+                      // fullWidth
                     >
                       <EditIcon />
                       &nbsp; Edit

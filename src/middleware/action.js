@@ -3,6 +3,7 @@ export const GET_USER_LIST = "GET_USER_LIST";
 export const DEL_USER = "DEL_USER";
 export const ADD_USER = "ADD_USER";
 export const EDIT_USER = "EDIT_USER";
+export const GET_USER = "GET_USER";
 
 export const delUser = (id) => {
   return (dispatch) => {
@@ -50,7 +51,6 @@ export const getUser = (id) => {
     });
   };
 };
-export const GET_USER = "GET_USER";
 
 export const getUserList = () => {
   return (dispatch) => {
